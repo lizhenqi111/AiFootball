@@ -1,0 +1,12 @@
+visualizations/
+
+*.log
+
+**/__pycache__/
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+
+model/s

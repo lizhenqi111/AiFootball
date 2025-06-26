@@ -1,0 +1,17 @@
+model:
+  name: "pitch detection"
+  type: "keypoint_detection"
+  weights_path: "models/pitch.engine"
+  device: 0 
+  fp16: true
+
+inference:
+  img_size: [960, 540]
+  conf: 0.2
+
+image:
+  img_size: [1080, 1920]
+
+camera_is_moving: true
+
+output_name: "pitch"

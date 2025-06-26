@@ -1,0 +1,15 @@
+model:
+  name: "kpr"
+  type: "reid"
+  weights_path: "models/kpr_model.engine"
+  device: 1
+  parts_num: 5
+
+inference:
+  img_size: [128, 256]
+  conf: 0.3
+
+image:
+  img_size: [1920, 1080]
+
+output_name: ["embeddings", "visibility_scores"]

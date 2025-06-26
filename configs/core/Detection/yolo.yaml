@@ -1,0 +1,27 @@
+model:
+  name: "person and ball detection"
+  type: "object_detection"
+  weights_path: "models/yolo11m.engine"
+  device: "cuda:0"  # 可选: "cpu", "cuda:0"
+  fp16: true
+  classes: ["ball", "person"]
+  class_idxes: [0, 1]
+
+inference:
+  img_size: 640
+  conf: 0.65
+  inference_iou_threshold: 0.3
+  max_detections: 100
+  verbose: False
+
+slicer:
+  is_slicer: true
+  split_h_n: 1
+  split_w_n: 4
+  overlap_wh: 100
+  slicer_iou_threshold: 0.3
+  input_width: 1920
+  input_hight: 1080
+  thread_workers: 1
+
+output_name: ["ball", "person"]

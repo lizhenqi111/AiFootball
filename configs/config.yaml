@@ -1,0 +1,32 @@
+cam_indexs: [0, 1, 2]
+
+SharedMemoryPool:
+  image_size: [1080, 1920, 3]  # 高度, 宽度, 通道数
+  num_blocks: 48
+
+processing_pipeline:
+  - name: "image_capture"
+    processor: "camera"
+    fps: 30
+    
+  - name: "detection"
+    processor: "detection"
+    model_path: "models/detection_model.pth"
+    
+  - name: "pitch_estimation"
+    processor: "pitch"
+    
+  - name: "keypoints"
+    processor: "keypoints"
+    model_config: "configs/hrnet.yaml"
+    
+  - name: "reid"
+    processor: "reid"
+    
+  - name: "tracking"
+    processor: "track"
+    
+  - name: "visualization"
+    processor: "visual"
+    output_path: "output/videos/"
+

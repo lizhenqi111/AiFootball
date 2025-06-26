@@ -1,0 +1,18 @@
+model:
+  name: "cameltrack"
+  type: "track"
+  weights_path: "models/camel.engine"
+  device: 1
+
+parameters:
+  min_det_conf: 0.4
+  min_init_det_conf: 0.6
+  min_num_hits: 0
+  max_wo_hits: 10
+  max_track_gallery_size: 50
+  sim_threshold: 0.1
+
+image:
+  img_size: [1920, 1080]
+
+output_name: "tracklets"

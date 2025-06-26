@@ -1,0 +1,15 @@
+model:
+  name: "rtmpose"
+  type: "human_keypoint_detection"
+  weights_path: "models/rtmpose.engine"
+  device: "cuda:0"  
+  fp16: true
+
+inference:
+  img_size: [192, 256]
+  conf: 0.3
+
+image:
+  img_size: [1920, 1080]
+
+output_name: "keypoints_xyc"
